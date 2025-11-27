@@ -35,7 +35,6 @@
         
         let draggedImg = null;
 
-        // Mélanger les images
         document.getElementById('shuffleBtn').addEventListener('click', function() {
             console.log('Bouton cliqué');
             
@@ -68,7 +67,6 @@
             document.getElementById('message').innerHTML = '';
         });
 
-        // Drag and drop
         const images = document.querySelectorAll('img');
         images.forEach(img => {
             img.draggable = true;
