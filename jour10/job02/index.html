@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaPlateforme_ Interactive</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        /* Curseur pointer pour montrer que c'est cliquable */
+        .list-group-item { cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="modal fade" id="modalPapillon" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Merci ! Votre papillon a bien été commandé. Attention aux effets secondaires.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">D'accord</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDGC" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">Secret Key Activated</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-body-dgc">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-3" href="#">LPTF</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="https://laplateforme.io" target="_blank">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Units</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Jobs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Skills</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="text-center display-4 text-secondary mb-5">LaPlateforme_</h1>
+
+        <div class="row g-4">
+            <div class="col-12 col-md-3">
+                <div class="card h-100">
+                    <img src="https://images.unsplash.com/photo-1475724017904-b712052c192a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" class="card-img-top" alt="Papillon">
+                    <div class="card-body">
+                        <h5 class="card-title">Un Papillon</h5>
+                        <p class="card-text">Un papillon, c'est un peu comme une chenille, mais avec des ailes. Ne pas ingérer.</p>
+                        <button class="btn btn-primary" id="btn-papillon">Commander votre propre papillon</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <div class="p-5 bg-light rounded-3 h-100 d-flex flex-column justify-content-between" id="jumbotron-container">
+                    <div id="jumbotron-content">
+                        <h1 class="display-5 fw-normal" id="jumbo-title">Bonjour, monde!</h1>
+                        <p class="lead" id="jumbo-lead">Il existe plusieurs visions du terme :</p>
+                        <p id="jumbo-text">le monde est la matière, l'espace et les phénomènes qui nous sont accessibles par les sens, l'expérience ou la raison.</p>
+                        <hr class="my-4">
+                        <div class="d-flex align-items-center">
+                            <button class="btn btn-danger btn-lg me-2" type="button" id="btn-reboot">Rebooter le Monde</button>
+                            <div class="spinner-border text-info" role="status" id="main-spinner">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <nav aria-label="Page navigation" class="mt-4">
+                        <ul class="pagination justify-content-end mb-0">
+                            <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                            <li class="page-item active page-link-num" data-page="1"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item page-link-num" data-page="2"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item page-link-num" data-page="3"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3">
+                <div class="list-group" id="main-list">
+                    <a class="list-group-item list-group-item-action active">Limbes</a>
+                    <a class="list-group-item list-group-item-action">Luxure</a>
+                    <a class="list-group-item list-group-item-action">Gourmandise</a>
+                    <a class="list-group-item list-group-item-action">Avarice</a>
+                    <a class="list-group-item list-group-item-action">Colere</a>
+                    <a class="list-group-item list-group-item-action">Heresie</a>
+                    <a class="list-group-item list-group-item-action">Violence</a>
+                    <a class="list-group-item list-group-item-action">Ruse et Tromperie</a>
+                    <a class="list-group-item list-group-item-action">Trahison</a>
+                    <a class="list-group-item list-group-item-action">Internet Explorer</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="d-flex justify-content-end mb-1">
+                    <span class="fw-bold">Installation de AI 9000</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn btn-outline-secondary btn-sm" id="btn-minus"><</button>
+                    <div class="progress flex-grow-1">
+                        <div id="main-progress" class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <button class="btn btn-outline-secondary btn-sm" id="btn-plus">></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5 mb-5 g-5">
+            
+            <div class="col-12 col-md-6">
+                <h5 class="mb-3">Recevez votre copie gratuite d'internet 2!</h5>
+                
+                <div class="input-group mb-3">
+                    <span class="input-group-text">@</span>
+                    <input type="text" class="form-control" id="dgc-login" placeholder="Login">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="dgc-pwd" placeholder="Mot de Passe">
+                    <span class="input-group-text">@example.com</span>
+                </div>
+
+                <label class="form-label">URL des Internets 2 et 2.1 Beta</label>
+                
+                <div class="input-group mb-3">
+                    <span class="input-group-text">DogeCoin</span>
+                    <input type="text" class="form-control" id="dgc-doge">
+                    <span class="input-group-text">.00</span>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text">https://133t.lptf/dkwb/berlusconimkt/</span>
+                    <input type="text" class="form-control" id="dgc-url">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <form id="login-form">
+                    <div class="mb-3">
+                        <label for="emailInput" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="emailInput">
+                        <div class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="passwordInput" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="passwordInput">
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- 2. MODALE PAPILLON ---
+            const btnPapillon = document.getElementById('btn-papillon');
+            const modalPapillon = new bootstrap.Modal(document.getElementById('modalPapillon'));
+            
+            btnPapillon.addEventListener('click', (e) => {
+                e.preventDefault(); // Empêche le lien de remonter en haut de page
+                modalPapillon.show();
+            });
+
+            // --- 3. REBOOTER LE MONDE (Blade Runner Quotes) ---
+            const quotes = [
+                "J'ai vu tant de choses que vous, humains, ne pourriez pas croire...",
+                "De grands navires en feu surgissant de l'épaule d'Orion.",
+                "J'ai vu des rayons fabuleux, des rayons C, briller dans l'ombre de la Porte de Tannhäuser.",
+                "Tous ces moments se perdront dans l'oubli, comme les larmes dans la pluie.",
+                "Il est temps de mourir."
+            ];
+            const btnReboot = document.getElementById('btn-reboot');
+            const jumboText = document.getElementById('jumbo-text');
+            const jumboTitle = document.getElementById('jumbo-title');
+
+            btnReboot.addEventListener('click', () => {
+                // Choisir une citation aléatoire
+                const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+                jumboText.innerText = randomQuote;
+                jumboTitle.innerText = "Système Rebooté";
+            });
+
+            // --- 4. PAGINATION ---
+            const pageLinks = document.querySelectorAll('.page-link-num');
+            const jumboLead = document.getElementById('jumbo-lead');
+
+            const pageContents = {
+                1: "Contenu de la page 1 : La vision matérielle du monde.",
+                2: "Contenu de la page 2 : Une vision plus spirituelle de l'univers.",
+                3: "Contenu de la page 3 : Bienvenue dans la matrice."
+            };
+
+            pageLinks.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Gestion de la classe active
+                    pageLinks.forEach(link => link.classList.remove('active'));
+                    item.classList.add('active');
+
+                    // Modification du contenu
+                    const pageNum = item.getAttribute('data-page');
+                    jumboText.innerText = pageContents[pageNum];
+                    jumboTitle.innerText = "Page " + pageNum;
+                });
+            });
+
+            // --- 5. LISTE GROUPÉE ACTIVE ---
+            const listItems = document.querySelectorAll('#main-list .list-group-item');
+            
+            listItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // On retire 'active' de tout le monde
+                    listItems.forEach(el => el.classList.remove('active'));
+                    // On l'ajoute à l'élément cliqué
+                    item.classList.add('active');
+                });
+            });
+
+            // --- 6. PROGRESS BAR (+ et -) ---
+            const progressBar = document.getElementById('main-progress');
+            const btnPlus = document.getElementById('btn-plus');
+            const btnMinus = document.getElementById('btn-minus');
+
+            function updateProgress(change) {
+                // Récupérer la valeur actuelle (ex: "75%")
+                let currentWidth = parseInt(progressBar.style.width) || 0;
+                let newWidth = currentWidth + change;
+
+                // Limiter entre 0 et 100
+                if(newWidth > 100) newWidth = 100;
+                if(newWidth < 0) newWidth = 0;
+
+                // Appliquer les changements
+                progressBar.style.width = newWidth + "%";
+                progressBar.setAttribute('aria-valuenow', newWidth);
+            }
+
+            btnPlus.addEventListener('click', () => updateProgress(10));
+            btnMinus.addEventListener('click', () => updateProgress(-10));
+
+            // --- 7. KEY CODE D-G-C ---
+            const dgcKeys = [];
+            const modalDGC = new bootstrap.Modal(document.getElementById('modalDGC'));
+            const modalBodyDGC = document.getElementById('modal-body-dgc');
+
+            document.addEventListener('keydown', (e) => {
+                // On ajoute la touche appuyée (en minuscule)
+                dgcKeys.push(e.key.toLowerCase());
+
+                // On garde seulement les 3 dernières touches
+                if (dgcKeys.length > 3) {
+                    dgcKeys.shift();
+                }
+
+                // On vérifie la séquence
+                if (dgcKeys.join('') === 'dgc') {
+                    // Récupération des données
+                    const login = document.getElementById('dgc-login').value || "Vide";
+                    const pwd = document.getElementById('dgc-pwd').value || "Vide";
+                    const doge = document.getElementById('dgc-doge').value || "Vide";
+                    const url = document.getElementById('dgc-url').value || "Vide";
+
+                    // Injection dans la modale
+                    modalBodyDGC.innerHTML = `
+                        <ul>
+                            <li><strong>Login:</strong> ${login}</li>
+                            <li><strong>Pwd:</strong> ${pwd}</li>
+                            <li><strong>Doge:</strong> ${doge}</li>
+                            <li><strong>Url:</strong> ${url}</li>
+                        </ul>
+                    `;
+                    modalDGC.show();
+                    
+                    // Reset array pour éviter de spammer
+                    dgcKeys.length = 0; 
+                }
+            });
+
+            // --- 8. VALIDATION FORMULAIRE & SPINNER ---
+            const loginForm = document.getElementById('login-form');
+            const spinner = document.getElementById('main-spinner');
+            const colors = ['text-primary', 'text-secondary', 'text-success', 'text-danger', 'text-warning', 'text-info', 'text-dark'];
+
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault(); // Empêcher le rechargement de la page
+
+                const email = document.getElementById('emailInput').value;
+                const password = document.getElementById('passwordInput').value;
+
+                if (email !== "" && password !== "") {
+                    // Retirer toutes les classes de couleur possibles
+                    colors.forEach(color => spinner.classList.remove(color));
+
+                    // Choisir une nouvelle couleur
+                    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                    spinner.classList.add(randomColor);
+                } else {
+                    alert("Veuillez remplir l'email et le mot de passe !");
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>

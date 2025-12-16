@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Dashboard - Materialize</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <style>
+        /* Un petit ajustement pour que le footer reste en bas si le contenu est court */
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        main {
+            flex: 1 0 auto;
+        }
+    </style>
+</head>
+<body class="grey lighten-5">
+
+    <header>
+        <div class="navbar-fixed">
+            <nav class="indigo darken-3">
+                <div class="nav-wrapper container">
+                    <a href="#!" class="brand-logo"><i class="material-icons left">public</i>TravelBoard</a>
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#"><i class="material-icons left">dashboard</i>Dashboard</a></li>
+                        <li><a href="#"><i class="material-icons left">map</i>Destinations</a></li>
+                        <li><a href="#"><i class="material-icons left">account_circle</i>Profil</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li>
+                <div class="user-view">
+                    <div class="background indigo lighten-1"></div>
+                    <a href="#name"><span class="white-text name">John Doe</span></a>
+                    <a href="#email"><span class="white-text email">john@travel.com</span></a>
+                </div>
+            </li>
+            <li><a href="#!"><i class="material-icons">dashboard</i>Dashboard</a></li>
+            <li><a href="#!"><i class="material-icons">map</i>Destinations</a></li>
+        </ul>
+    </header>
+
+    <main class="container" style="padding-top: 30px;">
+        
+        <div class="row">
+            <div class="col s12">
+                <div class="card-panel white z-depth-1 welcome-card">
+                    <h4 class="indigo-text text-darken-3" style="margin-top:0;">Bonjour, Explorateur !</h4>
+                    <p class="grey-text">Voici le résumé de vos dernières aventures et vos prochaines destinations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60">
+                        <span class="card-title">Islande</span>
+                        <a class="btn-floating halfway-fab waves-effect waves-light pink accent-3"><i class="material-icons">favorite</i></a>
+                    </div>
+                    <div class="card-content">
+                        <p>Prochain départ prévu dans 12 jours. Équipement grand froid requis.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="https://images.unsplash.com/photo-1528360983277-13d9b152cace?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Japon<i class="material-icons right">more_vert</i></span>
+                        <p><a href="#" class="indigo-text">Voir le guide</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Détails Japon<i class="material-icons right">close</i></span>
+                        <p>Kyoto, Tokyo et Osaka. Le budget prévisionnel est de 2500€. N'oubliez pas le JR Pass pour le train !</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m12 l4">
+                <div class="row">
+                    <div class="col s12 m6 l12">
+                        <div class="card-panel teal lighten-1 white-text center-align z-depth-2">
+                            <i class="material-icons medium">flight_takeoff</i>
+                            <h5>12 Vols</h5>
+                            <p>Cette année</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l12">
+                        <div class="card-panel orange lighten-1 white-text center-align z-depth-2">
+                            <i class="material-icons medium">camera_alt</i>
+                            <h5>450 Photos</h5>
+                            <p>En ligne</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            
+            <div class="col s12 l8">
+                <div class="card horizontal hoverable">
+                    <div class="card-image hide-on-small-only">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=60">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <span class="card-title indigo-text">Dernier Article : Plages de rêve</span>
+                            <p>Découvrez notre top 10 des plus belles plages secrètes en Asie du Sud-Est. Un guide complet pour éviter les foules.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#" class="indigo-text text-darken-2">Lire l'article</a>
+                            <a href="#" class="indigo-text text-darken-2">Partager</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 l4">
+                <ul class="collection with-header z-depth-1">
+                    <li class="collection-header indigo lighten-5"><h5>A faire</h5></li>
+                    <li class="collection-item">
+                        <div>Réserver hôtel Tokyo<a href="#!" class="secondary-content"><i class="material-icons teal-text">check</i></a></div>
+                    </li>
+                    <li class="collection-item">
+                        <div>Acheter sac à dos<a href="#!" class="secondary-content"><i class="material-icons red-text">priority_high</i></a></div>
+                    </li>
+                    <li class="collection-item">
+                        <div>Renouveler passeport<a href="#!" class="secondary-content"><i class="material-icons grey-text">send</i></a></div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="page-footer indigo darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">TravelBoard</h5>
+                    <p class="grey-text text-lighten-4">Votre compagnon de route pour explorer le monde sans limite.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Réseaux</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright indigo darken-3">
+            <div class="container">
+                © 2023 Copyright TravelBoard
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        // Initialisation des composants Materialize
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
+</body>
+</html>

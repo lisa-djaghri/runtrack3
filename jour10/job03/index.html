@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Grille Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Styles pour visualiser les blocs (couleurs et hauteurs) */
+        .box {
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            border: 2px solid white; /* Pour voir les séparations */
+        }
+        .header { background-color: #e74c3c; height: 100px; line-height: 60px; }
+        .menu { background-color: #3498db; height: 50px; }
+        
+        /* Contenu principal et Sidebar */
+        .main { background-color: #2ecc71; min-height: 300px; }
+        .sidebar { background-color: #9b59b6; min-height: 300px; }
+        
+        /* Pied de page et blocs du bas */
+        .footer { background-color: #34495e; height: 80px; }
+        .small-box { background-color: #f1c40f; color: #333; min-height: 150px; }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-4">
+        
+        <div class="row">
+            <div class="col-12">
+                <div class="box header">HEADER (Logo)</div>
+            </div>
+        </div>
+
+        <div class="row d-none d-lg-flex">
+            <div class="col-12">
+                <div class="box menu">MENU (Visible uniquement sur Desktop)</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <div class="box main">
+                    CONTENU PRINCIPAL<br>
+                    (Mobile: 100% / Desktop: 66%)
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="box sidebar">
+                    SIDEBAR<br>
+                    (Mobile: 100% / Desktop: 33%)
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="box small-box">Bloc A</div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="box small-box">Bloc B</div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="box small-box">Bloc C</div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="box small-box">Bloc D</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="box footer">FOOTER</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire Materialize Moderne</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="grey lighten-5"> <header>
+        <nav class="teal lighten-1 z-depth-2">
+            <div class="nav-wrapper container">
+                <a href="index.html" class="brand-logo"><i class="material-icons left">cloud</i>Mon Site</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="index.html"><i class="material-icons left">home</i>Accueil</a></li>
+                    <li class="active"><a href="index.html"><i class="material-icons left">person_add</i>Inscription</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" style="margin-top: 40px; margin-bottom: 40px;">
+        <div class="row">
+            <div class="col s12 m10 offset-m1">
+                
+                <div class="card-panel">
+                    
+                    <div class="row">
+                        <div class="col s12 center-align">
+                            <h4 class="teal-text text-lighten-1">Création de compte</h4>
+                            <p class="grey-text">Rejoignez-nous en quelques clics</p>
+                        </div>
+                    </div>
+
+                    <form action="index.html" method="get">
+
+                        <div class="row">
+                            <div class="col s12">
+                                <div class="input-field">
+                                    <i class="material-icons prefix">wc</i>
+                                    <div style="margin-left: 45px; padding-top: 10px;">
+                                        <label style="margin-right: 20px;">
+                                            <input name="civilite" type="radio" value="M" checked />
+                                            <span>Monsieur</span>
+                                        </label>
+                                        <label>
+                                            <input name="civilite" type="radio" value="Mme" />
+                                            <span>Madame</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <i class="material-icons prefix">face</i>
+                                <input id="prenom" type="text" name="prenom" class="validate" required>
+                                <label for="prenom">Prénom</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="nom" type="text" name="nom" class="validate" required>
+                                <label for="nom">Nom</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">place</i>
+                                <input id="adresse" type="text" name="adresse" class="validate">
+                                <label for="adresse">Adresse complète</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">email</i>
+                                <input id="email" type="email" name="email" class="validate" required>
+                                <label for="email">Adresse Email</label>
+                                <span class="helper-text" data-error="Format invalide" data-success="Valide">Ex: jean@exemple.com</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <i class="material-icons prefix">vpn_key</i>
+                                <input id="password" type="password" name="password" class="validate" required>
+                                <label for="password">Mot de passe</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <i class="material-icons prefix">check_circle</i>
+                                <input id="confirm_password" type="password" name="confirm_password" class="validate" required>
+                                <label for="confirm_password">Confirmation</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12">
+                                <div class="input-field">
+                                    <i class="material-icons prefix">favorite</i>
+                                    <div style="margin-left: 45px;">
+                                        <p class="grey-text" style="margin-top: 0;">Vos passions :</p>
+                                        
+                                        <div class="row">
+                                            <div class="col s6 m3">
+                                                <label>
+                                                    <input type="checkbox" name="passions" value="informatique" class="filled-in" checked="checked" />
+                                                    <span>Info</span>
+                                                </label>
+                                            </div>
+                                            <div class="col s6 m3">
+                                                <label>
+                                                    <input type="checkbox" name="passions" value="voyages" class="filled-in" />
+                                                    <span>Voyages</span>
+                                                </label>
+                                            </div>
+                                            <div class="col s6 m3">
+                                                <label>
+                                                    <input type="checkbox" name="passions" value="sport" class="filled-in" />
+                                                    <span>Sport</span>
+                                                </label>
+                                            </div>
+                                            <div class="col s6 m3">
+                                                <label>
+                                                    <input type="checkbox" name="passions" value="lecture" class="filled-in" />
+                                                    <span>Lecture</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 center-align">
+                                <br>
+                                <button class="btn-large waves-effect waves-light teal lighten-1 z-depth-3" type="submit" name="action">
+                                    Créer mon compte
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div> </div>
+        </div>
+    </main>
+
+    <footer class="page-footer teal lighten-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text
