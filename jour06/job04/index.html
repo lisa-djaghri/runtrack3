@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Hamburger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Mon Site</div>
+
+        <div class="hamburger" id="hamburger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav>
+            <ul id="nav-list">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Présentation</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="section">1</section>
+        <section class="section">2</section>
+        <section class="section">3</section>
+        <section class="section">4</section>
+    </div>
+
+    <script>
+        // 1. On sélectionne le bouton et la liste de liens
+        const hamburger = document.getElementById('hamburger-btn');
+        const navList = document.getElementById('nav-list');
+
+        // 2. On ajoute un écouteur d'événement au "clic"
+        hamburger.addEventListener('click', () => {
+            // Cette fonction ajoute ou enlève la classe "active"
+            navList.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

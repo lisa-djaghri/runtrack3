@@ -1,0 +1,46 @@
+/* --- STYLE DE BASE (Mobile / < 1280px) --- */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+/* Le conteneur parent qui gère la disposition */
+.container {
+    display: grid;
+    /* Par défaut : 1 seule colonne */
+    grid-template-columns: 1fr; 
+    gap: 20px; /* Espace entre les blocs */
+}
+
+/* Le style des sections (enfants) */
+.section {
+    background-color: #88c1d0; /* Couleur demandée */
+    height: 200px;             /* Hauteur fixe pour bien voir les blocs */
+    border: 2px solid #275fa0; /* Bordure pour le contraste visuel */
+    
+    /* Juste pour centrer le numéro (facultatif) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* 1. Écran Intermédiaire (Entre 1280px et 1680px) */
+/* On passe à 2 colonnes (format carré 2x2) */
+@media screen and (min-width: 1280px) {
+    .container {
+        grid-template-columns: 1fr 1fr; /* ou repeat(2, 1fr) */
+    }
+}
+
+/* 2. Grand Écran (Supérieur à 1680px) */
+/* On passe à 4 colonnes (tout aligné) */
+@media screen and (min-width: 1680px) {
+    .container {
+        grid-template-columns: repeat(4, 1fr); /* 4 colonnes égales */
+    }
+}

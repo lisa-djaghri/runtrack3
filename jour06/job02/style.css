@@ -1,0 +1,33 @@
+/* 1. Style par défaut (base) */
+/* S'applique à toutes les tailles, sauf si écrasé par une media query plus bas.
+   C'est aussi la couleur active si l'écran est supérieur à 1920px. */
+body {
+    background-color: #88c1d0; /* Bleu clair */
+    font-family: sans-serif;   /* Ajout pour la lisibilité */
+    transition: background-color 0.5s; /* Ajout pour une transition douce */
+}
+
+/* 2. Entre 1680px et 1920px */
+@media screen and (min-width: 1680px) and (max-width: 1920px) {
+    body {
+        background-color: #ffca4b; /* Jaune */
+    }
+}
+
+/* 3. Entre 1280px et 1680px */
+/* On s'arrête à 1679px pour ne pas entrer en conflit avec la règle du dessus */
+@media screen and (min-width: 1280px) and (max-width: 1679px) {
+    body {
+        background-color: #275fa0; /* Bleu foncé */
+        color: white; /* On change le texte en blanc pour le contraste */
+    }
+}
+
+/* 4. Inférieur à 1280px */
+/* On s'arrête à 1279px pour ne pas entrer en conflit avec la règle du dessus */
+@media screen and (max-width: 1279px) {
+    body {
+        background-color: #ffffff; /* Blanc */
+        color: black;
+    }
+}
